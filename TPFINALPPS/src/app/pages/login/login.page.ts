@@ -5,32 +5,29 @@ import { AuthenticationService } from '../../servicios/authentication.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+  styleUrls: ['./login.page.scss']
 })
 export class LoginPage implements OnInit {
-
   public miUsuario: Usuario;
   public mostrar: boolean;
 
-  constructor(private authService: AuthenticationService) { 
+  constructor(private authService: AuthenticationService) {
     this.miUsuario = new Usuario();
   }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  login() {
+    this.mostrar = this.authService.login(this.miUsuario);
   }
-  
- login(){
-  this.mostrar = this.authService.login(this.miUsuario);
- }
 
- completarAdmin(){
-  this.miUsuario.usuario = "admin";
-  this.miUsuario.clave = "admin";
- }
+  completarAdmin() {
+    this.miUsuario.usuario = 'admin';
+    this.miUsuario.clave = 'admin';
+  }
 
- completarUser(){
-
-  this.miUsuario.usuario = "usuario";
-  this.miUsuario.clave = "usuario";
- }
+  completarUser() {
+    this.miUsuario.usuario = 'usuario';
+    this.miUsuario.clave = 'usuario';
+  }
 }
