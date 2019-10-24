@@ -31,7 +31,7 @@ export class LoginPage implements OnInit {
  }
 
  completarUser(){
-  this.miUsuario.nombre = "usuario"; 
+  this.miUsuario.usuario = "usuario"; 
   this.miUsuario.clave = "usuario";
  }
 }
