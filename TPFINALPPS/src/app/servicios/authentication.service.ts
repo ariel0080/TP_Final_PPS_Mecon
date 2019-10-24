@@ -25,12 +25,12 @@ export class AuthenticationService {
     });*/
     console.info("Objeto,",miUsuario);
 
-    if(miUsuario.nombre == "usuario" && miUsuario.clave == "usuario"){
+    if(miUsuario.usuario == "usuario" && miUsuario.clave == "usuario"){
       console.log("hola");
       this.mostrar = false;
       this.authenticationState.next(true);
       return true;
-    }if(miUsuario.nombre == "admin" && miUsuario.clave == "admin"){
+    }if(miUsuario.usuario == "admin" && miUsuario.clave == "admin"){
       console.log("hola");
       this.mostrar = false;
       this.authenticationState.next(true);
