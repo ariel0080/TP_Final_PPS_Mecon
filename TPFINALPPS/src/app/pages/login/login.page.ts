@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import { AuthenticationService } from '../../servicios/authentication.service';
+
 import { Usuario } from '../../clases/usuario';
 
 @Component({
@@ -24,7 +26,7 @@ export class LoginPage implements OnInit {
  }
 
  completarAdmin(){
-  this.miUsuario.nombre = "admin";
+  this.miUsuario.usuario = "admin";
   this.miUsuario.clave = "admin";
  }
 
