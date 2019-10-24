@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from 'src/app/services/authentication.service';
+import { AuthenticationService } from '../../servicios/authentication.service';
 import { Usuario } from '../../clases/usuario';
 
 @Component({
@@ -9,19 +9,17 @@ import { Usuario } from '../../clases/usuario';
 })
 export class LoginPage implements OnInit {
 
-  public miUsuario:Usuario;
-  public mostrar:boolean;
+  public miUsuario: Usuario;
+  public mostrar: boolean;
 
   constructor(private authService: AuthenticationService) { 
-    this.miUsuario = new Usuario;
+    this.miUsuario = new Usuario();
   }
 
   ngOnInit() {
   }
   
  login(){
-  //this.authService.login(this.miUsuario);
-  //console.log("respuesta del auth: ", this.authService.login(this.miUsuario) );
   this.mostrar = this.authService.login(this.miUsuario);
  }
 
@@ -31,7 +29,7 @@ export class LoginPage implements OnInit {
  }
 
  completarUser(){
-  this.miUsuario.nombre = "usuario";
+  this.miUsuario.nombre = "usuario"; 
   this.miUsuario.clave = "usuario";
  }
 }
