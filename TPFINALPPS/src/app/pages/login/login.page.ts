@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/servicios/auth.service';
 import { Usuario } from '../../clases/usuario';
-import { AuthenticationService } from '../../servicios/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -12,14 +12,19 @@ export class LoginPage implements OnInit {
   public mostrar: boolean;
   public chk: boolean;
 
-  constructor(private authService: AuthenticationService) {
+  constructor(private authService: AuthService) {
     this.miUsuario = new Usuario();
   }
 
   ngOnInit() {}
 
   login() {
-    this.mostrar = this.authService.login(this.miUsuario);
+    //this.mostrar = this.authService.login(this.miUsuario);
+    this.authService.SignIn(this.miUsuario.usuario, this.miUsuario.clave);
+  }
+
+  registrarse() {
+    this.authService.SignUp(this.miUsuario.usuario, this.miUsuario.clave);
   }
 
   completar(parametro) {
