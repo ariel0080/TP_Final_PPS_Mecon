@@ -4,7 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-import { HomePage } from './home.page';
+//import { HomePage } from './home.page';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 
 @NgModule({
@@ -15,11 +15,11 @@ import { NgxQRCodeModule } from 'ngx-qrcode2';
     RouterModule.forChild([
       {
         path: '',
-        component: HomePage
+        //component: HomePage
       }
     ]),
     NgxQRCodeModule
   ],
-  declarations: [HomePage]
+ // declarations: [HomePage]
 })
 export class HomePageModule {}
