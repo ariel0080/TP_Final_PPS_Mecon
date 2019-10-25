@@ -20,8 +20,8 @@
   <ion-button [disabled]="chk" expand="block" color="secondary" href="/register" routerDirection="forward">Registrarse</ion-button>  
 
   <ion-fab>
-      <ion-fab-button [disabled]="chk" (click)="completarAdmin()" color="dark">Admin</ion-fab-button>
-      <ion-fab-button [disabled]="chk" (click)="completarUser()" color="light">User</ion-fab-button>
+      <ion-fab-button [disabled]="chk" (click)="completar('admin')" color="dark">Admin</ion-fab-button>
+      <ion-fab-button [disabled]="chk" (click)="completar('user')" color="light">User</ion-fab-button>
   </ion-fab>
   
   
