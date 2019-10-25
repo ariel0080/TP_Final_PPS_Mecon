@@ -1,5 +1,7 @@
 {
   "name": "TPFINALPPS",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
