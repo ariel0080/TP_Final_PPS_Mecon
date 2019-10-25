@@ -1,7 +1,7 @@
 export class Usuario {
-    public usuario:String;
-    public clave:String;
-    public perfil:String;
+    public usuario: string;
+    public clave: string;
+    public perfil: string;
 
     constructor(){
         //this.nombre = 'natalia';
