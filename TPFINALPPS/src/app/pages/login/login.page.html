@@ -6,15 +6,22 @@
 
 
 <ion-content padding>
-  <ion-input type="text" [(ngModel)]="miUsuario.nombre" placeholder="Usuario" name="uname" required></ion-input>
-  <ion-input type="password" [(ngModel)]="miUsuario.clave" placeholder="Password" name="psw" required></ion-input>
-  <ion-label [hidden]='!mostrar'>Usuario incorrecto</ion-label>
-  <ion-button (click)="login()" expand="block">Login</ion-button>
-  <ion-button expand="block" color="secondary" href="/register" routerDirection="forward">Register</ion-button>
+  <ion-input [disabled]="chk" type="text" [(ngModel)]="miUsuario.usuario" placeholder="Usuario" name="uname" required></ion-input>
+  <ion-input [disabled]="chk" type="password" [(ngModel)]="miUsuario.clave" placeholder="Clave" name="psw" required></ion-input>  
+  
+  <!-- <ion-checkbox [(ngModel)]="chk"></ion-checkbox> -->
+
+  <ion-label expand="block">    
+    <ion-checkbox [(ngModel)]="chk"></ion-checkbox>
+    Ingresar como invitado
+  </ion-label>
+  
+  <ion-button (click)="login()" expand="block">Iniciar Sesión</ion-button>
+  <ion-button [disabled]="chk" expand="block" color="secondary" href="/register" routerDirection="forward">Registrarse</ion-button>  
 
   <ion-fab>
-      <ion-fab-button (click)="completarAdmin()" color="dark">Admin</ion-fab-button>
-      <ion-fab-button (click)="completarUser()" color="light">User</ion-fab-button>
+      <ion-fab-button [disabled]="chk" (click)="completar('admin')" color="dark">Admin</ion-fab-button>
+      <ion-fab-button [disabled]="chk" (click)="completar('user')" color="light">User</ion-fab-button>
   </ion-fab>
   
   

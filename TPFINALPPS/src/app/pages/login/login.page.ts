@@ -11,8 +11,9 @@ import { Usuario } from '../../clases/usuario';
 })
 export class LoginPage implements OnInit {
 
-  public miUsuario: Usuario;
-  public mostrar: boolean;
+  public miUsuario:Usuario;
+  public mostrar:boolean;
+  public chk:boolean;
 
   constructor(private authService: AuthenticationService) { 
     this.miUsuario = new Usuario();
@@ -25,13 +26,24 @@ export class LoginPage implements OnInit {
   this.mostrar = this.authService.login(this.miUsuario);
  }
 
- completarAdmin(){
-  this.miUsuario.usuario = "admin";
-  this.miUsuario.clave = "admin";
+ completar(parametro){
+
+    switch(parametro){
+      case "admin":
+          this.miUsuario.usuario = "admin";
+          this.miUsuario.clave = "admin";
+          break;
+      case "user":
+          this.miUsuario.usuario = "usuario";
+          this.miUsuario.clave = "usuario";
+          break;
+    }
+  
  }
 
- completarUser(){
-  this.miUsuario.usuario = "usuario"; 
-  this.miUsuario.clave = "usuario";
+
+ checkeado(){
+   
+  console.log('Nuevo estado:' + this.chk);
  }
 }
