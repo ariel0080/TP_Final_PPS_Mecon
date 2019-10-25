@@ -26,15 +26,21 @@ export class LoginPage implements OnInit {
   this.mostrar = this.authService.login(this.miUsuario);
  }
 
- completarAdmin(){
-  this.miUsuario.usuario = "admin";
-  this.miUsuario.clave = "admin";
+ completar(parametro){
+
+    switch(parametro){
+      case "admin":
+          this.miUsuario.usuario = "admin";
+          this.miUsuario.clave = "admin";
+          break;
+      case "user":
+          this.miUsuario.usuario = "usuario";
+          this.miUsuario.clave = "usuario";
+          break;
+    }
+  
  }
 
- completarUser(){
-  this.miUsuario.usuario = "usuario";
-  this.miUsuario.clave = "usuario";
- }
 
  checkeado(){
    
