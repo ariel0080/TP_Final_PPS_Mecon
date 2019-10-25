@@ -11,6 +11,7 @@ export class LoginPage implements OnInit {
 
   public miUsuario:Usuario;
   public mostrar:boolean;
+  public chk:boolean;
 
   constructor(private authService: AuthenticationService) { 
     this.miUsuario = new Usuario;
@@ -33,5 +34,10 @@ export class LoginPage implements OnInit {
  completarUser(){
   this.miUsuario.usuario = "usuario";
   this.miUsuario.clave = "usuario";
+ }
+
+ checkeado(){
+   
+  console.log('Nuevo estado:' + this.chk);
  }
 }
