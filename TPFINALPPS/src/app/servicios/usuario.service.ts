@@ -9,9 +9,8 @@ import { Usuario } from '../clases/usuario';
   providedIn: 'root'
 })
 export class UsuarioService {
-  public firestore: AngularFirestore;
 
-  constructor() {}
+  constructor(private firestore: AngularFirestore) {}
 
   altaCliente(cliente: Cliente): Promise<any> {
     return new Promise<any>((resolve, reject) => {
