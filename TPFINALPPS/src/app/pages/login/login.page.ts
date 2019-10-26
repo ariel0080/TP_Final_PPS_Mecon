@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/servicios/auth.service';
-import { Usuario } from '../../clases/usuario';
+//import { Usuario } from '../../clases/usuario';
+import { Cliente } from 'src/app/clases/cliente';
 
 @Component({
   selector: 'app-login',
@@ -8,34 +9,36 @@ import { Usuario } from '../../clases/usuario';
   styleUrls: ['./login.page.scss']
 })
 export class LoginPage implements OnInit {
-  public miUsuario: Usuario;
+  //public miUsuario: Cliente;
   public mostrar: boolean;
   public chk: boolean;
+  public email: string;
+  public clave: string;
 
   constructor(private authService: AuthService) {
-    this.miUsuario = new Usuario();
+    //this.miUsuario = new Cliente();
   }
 
   ngOnInit() {}
 
   login() {
     //this.mostrar = this.authService.login(this.miUsuario);
-    this.authService.SignIn(this.miUsuario.usuario, this.miUsuario.clave);
+    this.authService.SignIn(this.email, this.clave );
   }
 
   registrarse() {
-    this.authService.SignUp(this.miUsuario.usuario, this.miUsuario.clave);
+    this.authService.SignUp(this.email, this.clave);
   }
 
   completar(parametro) {
     switch (parametro) {
       case 'admin':
-        this.miUsuario.usuario = 'admin';
-        this.miUsuario.clave = 'admin';
+        this.email = 'admin';
+        this.clave = 'admin';
         break;
       case 'user':
-        this.miUsuario.usuario = 'usuario';
-        this.miUsuario.clave = 'usuario';
+        this.email = 'usuario';
+        this.clave = 'usuario';
         break;
     }
   }

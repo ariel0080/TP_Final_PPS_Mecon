@@ -1,14 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 import { Base64ToGallery } from '@ionic-native/base64-to-gallery/ngx';
 import { ToastController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-generar-qr',
+  templateUrl: './generar-qr.component.html',
+  styleUrls: ['./generar-qr.component.scss'],
 })
-export class HomePage {
+export class GenerarQRComponent implements OnInit {
 
   qrData = 'https://ionicacademy.com/';
   scannedCode = null;
@@ -17,16 +17,7 @@ export class HomePage {
   constructor( private barcodeScanner: BarcodeScanner, private base64ToGallery: Base64ToGallery,
     private toastCtrl: ToastController) {}
 
-    ngOnInit() {
-    }
-
-  scanCode() {
-    this.barcodeScanner.scan().then(
-      barcodeData =>{
-        this.scannedCode = barcodeData;
-      }
-    );
-  }
+  ngOnInit() {}
 
   downloadQR() {
     const canvas = document.querySelector('canvas') as HTMLCanvasElement;

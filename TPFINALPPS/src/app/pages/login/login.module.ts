@@ -6,6 +6,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { LoginPage } from './login.page';
+import { GenerarQRComponent } from 'src/app/componentes/generar-qr/generar-qr.component';
+import { QrPageModule } from '../qr/qr.module';
+import { LeerQRComponent } from 'src/app/componentes/leer-qr/leer-qr.component';
 
 const routes: Routes = [
   {
@@ -19,7 +22,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    //LeerQRComponent
   ],
   declarations: [LoginPage]
 })

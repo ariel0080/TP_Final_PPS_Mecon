@@ -1,0 +1,10 @@
+<ion-button expand="full" (click)="scanCode()" color="secondary">
+    <ion-icon name="qr-scanner"></ion-icon>
+    Escanear Código
+  </ion-button>
+
+  <ion-card *ngIf="scannedCode">
+      <ion-card-content>
+        Resultado del escaneo: {{ scannedCode }}
+      </ion-card-content>
+    </ion-card>

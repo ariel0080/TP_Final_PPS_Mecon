@@ -11,9 +11,12 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthService } from './servicios/auth.service';
+import { GenerarQRComponent } from './componentes/generar-qr/generar-qr.component';
+import { QrPageModule } from './pages/qr/qr.module';
+import { LeerQRComponent } from './componentes/leer-qr/leer-qr.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LeerQRComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
@@ -21,7 +24,9 @@ import { AuthService } from './servicios/auth.service';
     AppRoutingModule,
     IonicStorageModule.forRoot(),
     AngularFireAuthModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    
+    //GenerarQRComponent
   ],
   providers: [
     StatusBar,
