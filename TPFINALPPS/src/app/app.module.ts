@@ -3,6 +3,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
@@ -11,12 +12,9 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthService } from './servicios/auth.service';
-import { GenerarQRComponent } from './componentes/generar-qr/generar-qr.component';
-import { QrPageModule } from './pages/qr/qr.module';
-import { LeerQRComponent } from './componentes/leer-qr/leer-qr.component';
 
 @NgModule({
-  declarations: [AppComponent, LeerQRComponent],
+  declarations: [AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
@@ -24,15 +22,14 @@ import { LeerQRComponent } from './componentes/leer-qr/leer-qr.component';
     AppRoutingModule,
     IonicStorageModule.forRoot(),
     AngularFireAuthModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    
-    //GenerarQRComponent
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    AuthService
+    AuthService,
+    BarcodeScanner
   ],
   bootstrap: [AppComponent]
 })

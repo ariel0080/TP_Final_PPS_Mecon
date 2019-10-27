@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/servicios/auth.service';
 //import { Usuario } from '../../clases/usuario';
 import { Cliente } from 'src/app/clases/cliente';
+import { LeerQRComponent } from '../../componentes/leer-qr/leer-qr.component';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +24,7 @@ export class LoginPage implements OnInit {
 
   login() {
     //this.mostrar = this.authService.login(this.miUsuario);
-    this.authService.SignIn(this.email, this.clave );
+    this.authService.SignIn(this.email, this.clave);
   }
 
   registrarse() {

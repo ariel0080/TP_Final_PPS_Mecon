@@ -4,33 +4,47 @@
   </ion-toolbar>
 </ion-header>
 
-<!-- <app-generar-qr></app-generar-qr> -->
-
-<!-- <app-leer-qr></app-leer-qr> -->
-
-
+<!-- <app-generar-qr> </app-generar-qr> -->
 
 <ion-content padding>
-  <ion-input [disabled]="chk" type="text" [(ngModel)]="email" placeholder="Usuario" name="uname" required></ion-input>
-  <ion-input [disabled]="chk" type="password" [(ngModel)]="clave" placeholder="Clave" name="psw" required></ion-input>  
-  
+  <app-leer-qr> </app-leer-qr>
+
+  <ion-input
+    [disabled]="chk"
+    type="text"
+    [(ngModel)]="email"
+    placeholder="Usuario"
+    name="uname"
+    required
+  ></ion-input>
+  <ion-input
+    [disabled]="chk"
+    type="password"
+    [(ngModel)]="clave"
+    placeholder="Clave"
+    name="psw"
+    required
+  ></ion-input>
+
   <!-- <ion-checkbox [(ngModel)]="chk"></ion-checkbox> -->
 
-  <ion-label expand="block">    
+  <ion-label expand="block">
     <ion-checkbox [(ngModel)]="chk"></ion-checkbox>
     Ingresar como invitado
   </ion-label>
-  
+
   <ion-button (click)="login()" expand="block">Iniciar Sesión</ion-button>
-  <ion-button (click)="registrarse()" color="secondary" expand="block">Registrarse</ion-button>
+  <ion-button (click)="registrarse()" color="secondary" expand="block"
+    >Registrarse</ion-button
+  >
   <!-- <ion-button [disabled]="chk" expand="block" color="secondary" href="/register" routerDirection="forward">Registrarse</ion-button>  -->
 
   <ion-fab>
-      <ion-fab-button [disabled]="chk" (click)="completar('admin')" color="dark">Admin</ion-fab-button>
-      <ion-fab-button [disabled]="chk" (click)="completar('user')" color="light">User</ion-fab-button>
+    <ion-fab-button [disabled]="chk" (click)="completar('admin')" color="dark"
+      >Admin</ion-fab-button
+    >
+    <ion-fab-button [disabled]="chk" (click)="completar('user')" color="light"
+      >User</ion-fab-button
+    >
   </ion-fab>
-  
-  
-
-  
 </ion-content>

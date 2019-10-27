@@ -9,6 +9,7 @@ import { LoginPage } from './login.page';
 import { GenerarQRComponent } from 'src/app/componentes/generar-qr/generar-qr.component';
 import { QrPageModule } from '../qr/qr.module';
 import { LeerQRComponent } from 'src/app/componentes/leer-qr/leer-qr.component';
+import { NuestrosComponentesModule } from 'src/app/componentes/nuestros-componentes.module';
 
 const routes: Routes = [
   {
@@ -23,7 +24,7 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    //LeerQRComponent
+    NuestrosComponentesModule
   ],
   declarations: [LoginPage]
 })
