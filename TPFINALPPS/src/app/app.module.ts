@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
@@ -12,6 +13,7 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthService } from './servicios/auth.service';
+import { UsuarioService } from './servicios/usuario.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,8 +30,10 @@ import { AuthService } from './servicios/auth.service';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    BarcodeScanner,
+    AngularFirestore,
     AuthService,
-    BarcodeScanner
+    UsuarioService
   ],
   bootstrap: [AppComponent]
 })
