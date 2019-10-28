@@ -14,6 +14,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthService } from './servicios/auth.service';
 import { UsuarioService } from './servicios/usuario.service';
+import { HttpClientModule } from '@angular/common/http';
+import { Camera } from '@ionic-native/Camera/ngx';
+import { File } from '@ionic-native/File/ngx'
+import { WebView } from '@ionic-native/ionic-webview/ngx'
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,12 +28,18 @@ import { UsuarioService } from './servicios/usuario.service';
     AppRoutingModule,
     IonicStorageModule.forRoot(),
     AngularFireAuthModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    HttpClientModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: RouteReuseStrategy,
+      useClass: IonicRouteStrategy
+     },
+    Camera,
+    File,
+    WebView,
     BarcodeScanner,
     AngularFirestore,
     AuthService,
