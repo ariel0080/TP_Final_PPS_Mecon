@@ -31,7 +31,7 @@ export class SacarFotoComponent implements OnInit {
 
 
   loadStoredImages(){
-    this.storage.get(STORAGE_KEY).then(images=> {
+    this.storage.get(STORAGE_KEY).then(images => {
       if(images){
         let arr = JSON.parse(images);
         this.images = [];
@@ -64,21 +64,21 @@ export class SacarFotoComponent implements OnInit {
 
   async selectedImage(){
     const actionSheet = await this.actionSheetController.create({
-      header: "Select Image Source",
+      header: "Seleccione el origen de la imagen",
       buttons: [{
-        text: 'Load from Library',
+        text: 'Cargar desde la galería',
         handler: () => {
           this.takePicture(this.camera.PictureSourceType.PHOTOLIBRARY);
         }
       },
       {
-        text: 'Use Camera',
+        text: 'Usar Camara',
         handler: () => {
           this.takePicture(this.camera.PictureSourceType.CAMERA);
         }
       },
     {
-      text: 'Cancel',
+      text: 'Cancelar',
       role: 'cancel'
     }
   ]
@@ -97,6 +97,7 @@ export class SacarFotoComponent implements OnInit {
     this.camera.getPicture(options).then(imagePath => {
       var currentName = imagePath.substr(imagePath.lastIndexOf('/')+1);
       var correctPath = imagePath.substr(0, imagePath.lastIndexOf('/')+1);
+      alert(correctPath);
       this.copyFileToLocalDir(correctPath, currentName, this.createFileName());
     });
   }
