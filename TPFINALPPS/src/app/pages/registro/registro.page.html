@@ -1,9 +1,95 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>registro</ion-title>
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="/login"></ion-back-button>
+      </ion-buttons>
+    <ion-title>Registro</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
+    <ion-list >
+        <ion-radio-group (ionChange)="rbInputs($event)">
+          <ion-list-header>
+            <ion-label>Usted es: </ion-label>
+          </ion-list-header>
+      
+          <ion-item>
+            <ion-label>Cliente</ion-label>
+            <ion-radio name="cliente" slot="start" value="cliente"></ion-radio>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>Empleado</ion-label>
+            <ion-radio name="empleado" slot="start" value="empleado"></ion-radio>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>Supervisor</ion-label>
+            <ion-radio name="supervisor" slot="start" value="supervisor"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+
+      <br>
+
+      <ion-list [hidden]="ocultar">
+          <ion-input type="text" [(ngModel)]="nombre" placeholder="Nombre" name="uname" required ></ion-input>
+          <ion-input type="text" [(ngModel)]="apellido" placeholder="Apellido" name="uapellido" required ></ion-input>
+          <ion-input type="text" [(ngModel)]="dni" placeholder="DNI" name="uname" required ></ion-input>
+          <ion-input type="email" [(ngModel)]="email" placeholder="Email" name="uname" required ></ion-input>
+    
+          <ion-input [hidden]="habilitarCuil" type="text" [(ngModel)]="cuil" placeholder="Cuil" name="uname" required ></ion-input>
+          <ion-input [hidden]="habilitarTipoDeEmpleado" type="text" [(ngModel)]="tipoDeEmpleado" placeholder="Tipo de empleado" name="uname" required ></ion-input>
+    
+          <ion-input [hidden]="habilitarPerfil" type="text" [(ngModel)]="perfil" placeholder="Perfil" name="uname" required ></ion-input>
+    
+
+          <ion-input minlenght=6 clearOnEdit="true" type="password" [(ngModel)]="password1" placeholder="Clave" name="uname" required ></ion-input>
+          <ion-input minlenght=6 clearOnEdit="true" type="password" [(ngModel)]="password2" placeholder="Confirmar Clave" name="uname" required ></ion-input>
+
+      </ion-list>
+
+      
+<br><br>
+      <!-- <ion-list >
+          <ion-item>
+            <ion-label position="stacked">Nombre</ion-label>
+            <ion-input required type="text"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Apellido</ion-label>
+            <ion-input required type="text"></ion-input>
+          </ion-item>
+
+          <ion-item>
+              <ion-label position="stacked">DNI</ion-label>
+              <ion-input required type="number"></ion-input>
+          </ion-item>
+
+          <ion-item>
+              <ion-label position="stacked">Email</ion-label>
+              <ion-input required type="email"></ion-input>
+          </ion-item>
+
+          <ion-item>
+              <ion-label [hidden]="cuil" position="stacked">CUIL</ion-label>
+              <ion-input [hidden]="cuil" required type="number"></ion-input>
+          </ion-item>
+
+          <ion-item>
+              <ion-label [hidden]="tipoDeEmpleado" position="stacked">Tipo de empleado</ion-label>
+              <ion-input [hidden]="tipoDeEmpleado" required type="text"></ion-input>
+          </ion-item>
+
+          <ion-item>
+              <ion-label [hidden]="perfil" position="stacked">Perfil</ion-label>
+              <ion-input [hidden]="perfil" required type="text"></ion-input>
+          </ion-item>
+          
+        </ion-list> -->
+
+      <ion-button [hidden]="ocultar" (click)="registrarse()" color="secondary" expand="block">Enviar</ion-button>
 </ion-content>

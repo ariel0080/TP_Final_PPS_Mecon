@@ -35,10 +35,10 @@
   </ion-label>
 
   <ion-button (click)="login()" expand="block">Iniciar Sesión</ion-button>
-  <ion-button (click)="registrarse()" color="secondary" expand="block"
-    >Registrarse</ion-button
-  >
-  <!-- <ion-button [disabled]="chk" expand="block" color="secondary" href="/register" routerDirection="forward">Registrarse</ion-button>  -->
+  <!-- <ion-button (click)="registrarse()" color="secondary" expand="block"
+    >Registrarse</ion-button> -->
+    <ion-button expand="block" color="secondary" routerLink="/registro" routerDirection="forward">Registrarse</ion-button>
+      <!-- <ion-button [disabled]="chk" expand="block" color="secondary" href="/register" routerDirection="forward">Registrarse</ion-button>  -->
 
   <ion-fab>
     <ion-fab-button [disabled]="chk" (click)="completar('admin')" color="dark"
