@@ -18,9 +18,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { Camera } from '@ionic-native/Camera/ngx';
 import { File } from '@ionic-native/File/ngx'
 import { WebView } from '@ionic-native/ionic-webview/ngx'
+import { SplashComponent } from './componentes/splash/splash.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, SplashComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
