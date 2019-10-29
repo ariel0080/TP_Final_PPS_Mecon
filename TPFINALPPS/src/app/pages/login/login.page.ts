@@ -15,6 +15,8 @@ export class LoginPage implements OnInit {
   public chk: boolean;
   public email: string;
   public clave: string;
+  route: any;//borrar al depurar
+  navCtrl: any;//borrar al depurar
 
   constructor(private authService: AuthService) {
     //this.miUsuario = new Cliente();
@@ -46,5 +48,9 @@ export class LoginPage implements OnInit {
 
   checkeado() {
     console.log('Nuevo estado:' + this.chk);
+  }
+
+  ir(){
+    this.navCtrl.push('probar-foto');
   }
 }

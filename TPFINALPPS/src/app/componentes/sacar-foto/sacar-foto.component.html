@@ -1,27 +1,44 @@
-<h3 *ngIf="images.lenght === 0 text-center">Selecciona la imagen</h3>
-<ion-list>
-  <ion-item *ngFor="let img of images; index as pos">
-    <ion-thumbnail slot="start">
-        <ion-img [src]="img.path"></ion-img>
-    </ion-thumbnail>
-    <ion-label> {{ img.name }}</ion-label>
-  
-    <ion-button slot="end" fill="clear" (click)="startUpload(img)">
-      <ion-icon slot="icon-only" name="cloud-upload"></ion-icon>
-    </ion-button>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Imagen
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 
-    <ion-button slot="end" fill="clear" (click)="deleteImage(img)">
-        <ion-icon slot="icon-only" name="trash"></ion-icon>
-      </ion-button>
-  </ion-item>
-</ion-list>
 
-<ion-toolbar color="primary">
+<ion-content padding>
+
+    <h3 *ngIf="images.lenght === 0" text-center>Selecciona la imagen</h3>
+    
+    <!-- <ion-list>
+      <ion-item *ngFor="let img of images; index as pos">
+        <ion-thumbnail slot="start">
+            <ion-img [src]="img.path"></ion-img>
+        </ion-thumbnail>
+        <ion-label> {{ img.name }}</ion-label>
+      
+        <ion-button slot="end" fill="clear" (click)="startUpload(img)">
+          <ion-icon slot="icon-only" name="cloud-upload"></ion-icon>
+        </ion-button>
+    
+        <ion-button slot="end" fill="clear" (click)="deleteImage(img)">
+            <ion-icon slot="icon-only" name="trash"></ion-icon>
+          </ion-button>
+      </ion-item>
+    </ion-list> -->
+
+</ion-content>
+
+
+
+
+
+<ion-footer>
+  <ion-toolbar color="primary">
     <ion-button fill="clear" expand="full" color="light+" (click)="selectImage()">
       <ion-icon name="camera" slot="start"></ion-icon>
-      Selecionar
+      Selecionar Foto
     </ion-button>
   </ion-toolbar>
-
-
-
+</ion-footer>
