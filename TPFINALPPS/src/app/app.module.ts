@@ -18,10 +18,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { Camera } from '@ionic-native/camera/ngx';
 import { File } from '@ionic-native/file/ngx'
 import { WebView } from '@ionic-native/ionic-webview/ngx'
-import { SplashComponent } from './componentes/splash/splash.component';
+import { NuestrosComponentesModule } from './componentes/nuestros-componentes.module';
 
 @NgModule({
-  declarations: [AppComponent, SplashComponent],
+  declarations: [AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
@@ -29,6 +29,7 @@ import { SplashComponent } from './componentes/splash/splash.component';
     AppRoutingModule,
     IonicStorageModule.forRoot(),
     AngularFireAuthModule,
+    NuestrosComponentesModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     HttpClientModule
   ],

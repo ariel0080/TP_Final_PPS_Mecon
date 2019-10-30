@@ -1,8 +1,10 @@
-<app-avatar titulo="LOGIN"> </app-avatar>
+<app-splash *ngIf="showSplash"></app-splash>
+
+<app-avatar *ngIf="showApp" titulo="LOGIN"> </app-avatar>
 
 <!-- <app-generar-qr> </app-generar-qr> -->
 
-<ion-content class="ion-padding">
+<ion-content *ngIf="showApp" class="ion-padding">
   <app-leer-qr> </app-leer-qr>
   <!-- <app-sacar-foto></app-sacar-foto> -->
 
