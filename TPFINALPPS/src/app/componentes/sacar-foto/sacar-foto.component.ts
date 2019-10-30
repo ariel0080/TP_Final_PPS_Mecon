@@ -1,10 +1,10 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { Camera, PictureSourceType, CameraOptions } from '@ionic-native/Camera/ngx';
+import { Camera, PictureSourceType, CameraOptions } from '@ionic-native/camera/ngx';
 import { HttpClient } from '@angular/common/http';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { ActionSheetController, ToastController, Platform, LoadingController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
-import { File } from '@ionic-native/File/ngx';
+import { File } from '@ionic-native/file/ngx';
 
 
 const STORAGE_KEY = 'my_images';
