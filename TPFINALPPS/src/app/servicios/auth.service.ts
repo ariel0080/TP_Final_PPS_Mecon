@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Observable } from 'rxjs';
 import { UsuarioService } from './usuario.service';
-import { Cliente } from '../clases/cliente';
+import { Usuario } from '../clases/usuario';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -12,34 +13,58 @@ export class AuthService {
 
   constructor(
     private angularFireAuth: AngularFireAuth,
-    private userService: UsuarioService
+    private userService: UsuarioService,
+    private router: Router
   ) {
     this.userData = angularFireAuth.authState;
   }
 
-  SignUp(email: string, password: string) {
+  registracion(usuario: Usuario, password: string): string {
+    let salida = 'Se dio de alta un nuevo usuario';
+
     this.angularFireAuth.auth
-      .createUserWithEmailAndPassword(email, password)
+      .createUserWithEmailAndPassword(usuario.email, password)
       .then(res => {
-        const cliente = new Cliente('Pepe', 'PepeA', '123456', 'Foto', false, email, 'cliente');
-        this.userService.persistirUsuario(cliente, res.user.uid);
-        console.log('Successfully signed up!', res);
+        this.userService.persistirUsuario(usuario, res.user.uid);
       })
       .catch(error => {
-        console.log('Something is wrong:', error.message);
+        salida = error.message;
       });
 
-
+    return salida;
   }
 
-  SignIn(email: string, password: string) {
+  ingresar(email: string, password: string): string {
+    let salida = 'El usuario ingreso correctamente';
+
     this.angularFireAuth.auth
       .signInWithEmailAndPassword(email, password)
+      .then(res => {})
+      .catch(err => {
+        salida = err.message;
+      });
+
+    return salida;
+  }
+
+  ingresarAnonimo(usuario: Usuario, password: string): string {
+    let salida = 'El usuario ingreso correctamente';
+
+    this.angularFireAuth.auth
+      .signInAnonymously()
       .then(res => {
-        console.log('Successfully signed in!');
+        console.log(res);
       })
       .catch(err => {
-        console.log('Something is wrong:', err.message);
+        salida = err.message;
       });
+
+    return salida;
+  }
+
+  salir() {
+    this.angularFireAuth.auth.signOut().then(() => {
+      this.router.navigate(['/login']);
+    });
   }
 }
