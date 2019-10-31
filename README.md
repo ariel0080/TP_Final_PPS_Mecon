@@ -3,9 +3,7 @@
 - Estrategia del git utilizada: Merge al master y rebase.
 - FrontEnd: Ionic
 - BackEnd: Firebase
-
-Excel: Tareas y Funcionalidades
-Link: https://github.com/Hova2/TP_Final_PPS_Mecon/blob/master/PPS19%20-%20Comanda.xlsx
+- Excel: Tareas y Funcionalidades (https://github.com/Hova2/TP_Final_PPS_Mecon/blob/master/PPS19%20-%20Comanda.xlsx)
 
 # Sprint 1 20/10 - 27/10
 
