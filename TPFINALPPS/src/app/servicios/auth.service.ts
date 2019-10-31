@@ -47,8 +47,8 @@ export class AuthService {
     return salida;
   }
 
-  ingresarAnonimo(usuario: Usuario, password: string): string {
-    let salida = 'El usuario ingreso correctamente';
+  ingresarAnonimo(): string {
+    let salida = 'El usuario anonimo ingreso correctamente';
 
     this.angularFireAuth.auth
       .signInAnonymously()
@@ -62,9 +62,15 @@ export class AuthService {
     return salida;
   }
 
-  salir() {
-    this.angularFireAuth.auth.signOut().then(() => {
+  salir(): string {
+    let salida = 'El usuario salio correctamente';
+    this.angularFireAuth.auth.signOut().then((res) => {
+      console.log(res);
       this.router.navigate(['/login']);
+    }).catch(err => {
+      salida = err.message;
     });
+
+    return salida;
   }
 }

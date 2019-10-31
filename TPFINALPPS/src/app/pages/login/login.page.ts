@@ -42,13 +42,11 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {}
 
-  login() {
-    this.authService.SignIn(this.email, this.clave);
+  ingresar() {
+    this.authService.ingresar(this.email, this.clave);
   }
 
-  registrarse() {
-    this.authService.SignUp(this.email, this.clave);
-  }
+  registracion() {}
 
   completar(parametro) {
     switch (parametro) {
