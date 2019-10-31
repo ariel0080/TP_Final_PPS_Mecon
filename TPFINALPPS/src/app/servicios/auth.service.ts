@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Observable } from 'rxjs';
+import { UsuarioService } from './usuario.service';
+import { Cliente } from '../clases/cliente';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +10,10 @@ import { Observable } from 'rxjs';
 export class AuthService {
   userData: Observable<firebase.User>;
 
-  constructor(public angularFireAuth: AngularFireAuth) {
+  constructor(
+    private angularFireAuth: AngularFireAuth,
+    private userService: UsuarioService
+  ) {
     this.userData = angularFireAuth.authState;
   }
 
@@ -16,11 +21,15 @@ export class AuthService {
     this.angularFireAuth.auth
       .createUserWithEmailAndPassword(email, password)
       .then(res => {
+        const cliente = new Cliente('Pepe', 'PepeA', '123456', 'Foto', false, email, 'cliente');
+        this.userService.persistirUsuario(cliente, res.user.uid);
         console.log('Successfully signed up!', res);
       })
       .catch(error => {
         console.log('Something is wrong:', error.message);
       });
+
+
   }
 
   SignIn(email: string, password: string) {

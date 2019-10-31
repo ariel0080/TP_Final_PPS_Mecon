@@ -12,11 +12,10 @@ export class Supervisor extends Usuario {
     activo: boolean,
     email: string,
     rol: string,
-    id: string,
     cuil: string,
     perfil: string
   ) {
-    super(nombre, apellido, dni, foto, activo, email, rol, id);
+    super(nombre, apellido, dni, foto, activo, email, rol);
     this.cuil = cuil;
     this.perfil = perfil;
   }
