@@ -7,7 +7,7 @@ BackEnd: Firebase
 Excel: Tareas y Funcionalidades
 Link: https://github.com/Hova2/TP_Final_PPS_Mecon/blob/master/PPS19%20-%20Comanda.xlsx
 
-## Sprint 1 20/10 - 27/10
+# Sprint 1 20/10 - 27/10
 
 1.- Generación de repositorio  
 2.- Creación de estructura general de la aplicacion  
@@ -19,8 +19,8 @@ Link: https://github.com/Hova2/TP_Final_PPS_Mecon/blob/master/PPS19%20-%20Comand
 8.- Organización interna
 9.- Lectura de QR
 
-###Estado Sprint 1
-##Funcionalidades
+## Estado Sprint 1
+### Funcionalidades
 ![alt text](Screenshots/Funcionalidades-Sprint1.png)
-##Tareas
+### Tareas
 ![alt text](Screenshots/Tareas-Sprint1.png)
