@@ -1,8 +1,8 @@
-# 2019_TP_PPS_Comanda - Los del fondo.
+# 2019-TP-PPS-Comanda - Los del fondo.
 
-Estrategia del git utilizada: Merge al master y rebase.
-FrontEnd: Ionic
-BackEnd: Firebase
+- Estrategia del git utilizada: Merge al master y rebase.
+- FrontEnd: Ionic
+- BackEnd: Firebase
 
 Excel: Tareas y Funcionalidades
 Link: https://github.com/Hova2/TP_Final_PPS_Mecon/blob/master/PPS19%20-%20Comanda.xlsx
