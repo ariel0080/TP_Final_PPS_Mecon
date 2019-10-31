@@ -3,6 +3,7 @@ import { AuthService } from 'src/app/servicios/auth.service';
 //import { Usuario } from '../../clases/usuario';
 import { Cliente } from 'src/app/clases/cliente';
 import { LeerQRComponent } from '../../componentes/leer-qr/leer-qr.component';
+import { UsuarioService } from 'src/app/servicios/usuario.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,10 @@ export class LoginPage implements OnInit {
   public email: string;
   public clave: string;
 
-  constructor(private authService: AuthService) {
+  constructor(
+    private authService: AuthService,
+    private userService: UsuarioService
+  ) {
     //this.miUsuario = new Cliente();
   }
 
