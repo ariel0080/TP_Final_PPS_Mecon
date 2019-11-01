@@ -1,4 +1,4 @@
-<h3 *ngIf="images.lenght === 0 text-center">Selecciona la imagen</h3>
+<!-- <h3 *ngIf="images.lenght === 0 text-center">Selecciona la imagen</h3>
 <ion-list>
   <ion-item *ngFor="let img of images; index as pos">
     <ion-thumbnail slot="start">
@@ -21,7 +21,15 @@
       <ion-icon name="camera" slot="start"></ion-icon>
       Selecionar
     </ion-button>
-  </ion-toolbar>
+  </ion-toolbar> -->
+
+  <ion-button (click)="takePicture()">
+    <ion-icon name="camera"></ion-icon>
+    Tomar foto
+  </ion-button>
+
+  <!-- <img *ngIf="image" src="this.image" alt="image"> -->
+  <ion-label>{{ image }}</ion-label>
 
 
 
