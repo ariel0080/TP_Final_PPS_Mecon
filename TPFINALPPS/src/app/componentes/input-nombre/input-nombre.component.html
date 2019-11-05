@@ -3,4 +3,4 @@
 <ion-label position="stacked">Nombre: </ion-label>
 <ion-icon *ngIf="cumple" name="checkmark-circle" color ="success"></ion-icon>
 <ion-icon *ngIf="!cumple"name="close-circle" color="danger"></ion-icon>
-<ion-input required type="text" required ="true"  placeholder="Ingresar nombre" autocapitalize="true" [(ngModel)]='nombre' (ionInput)="v()" ></ion-input>
+<ion-input required type="text" required ="true"  placeholder="Ingresar nombre" autocapitalize="true" (ionInput)="v()" (ngModel)='nombre'  ></ion-input>

@@ -39,6 +39,11 @@
 
   <!-- <ion-button [disabled]="chk" expand="block" color="secondary" href="/register" routerDirection="forward">Registrarse</ion-button>  -->
 
+  <app-input-nombre (nombre)="mostrarNombre($event)"></app-input-nombre>
+<div >{{escrito}}</div>
+
+
+
   <ion-fab>
     <ion-fab-button [disabled]="chk" (click)="completar('admin')" color="dark"
       >Admin</ion-fab-button
@@ -49,7 +54,7 @@
   </ion-fab>
 
 
-  <app-input-nombre></app-input-nombre>
+  
 
 
 

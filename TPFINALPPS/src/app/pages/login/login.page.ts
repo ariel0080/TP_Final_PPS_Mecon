@@ -17,7 +17,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 export class LoginPage implements OnInit {
   public mostrar: boolean;
-
+  public escrito:string;
   public chk: boolean;
   public email: string;
   public clave: string;
@@ -80,6 +80,10 @@ export class LoginPage implements OnInit {
     console.log('Nuevo estado:' + this.chk);
   }
 
+  mostrarNombre(n:string)
+  {
+    this.escrito = n;
+  }
   
   
 }

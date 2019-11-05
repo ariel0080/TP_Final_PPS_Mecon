@@ -12,6 +12,7 @@ export class InputNombreComponent implements OnInit {
   @Output() nombre: EventEmitter<string>;
 
   cumple = false;
+  
 
   constructor() { }
 
